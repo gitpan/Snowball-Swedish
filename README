@@ -1,0 +1,25 @@
+Lingua/Stem/Snowball/Se version 1.0
+==============================
+
+Lingua::Stem::Snowball::Se is a perl port of the swedish
+stemmer at http://snowball.sourceforge.net.
+
+It also supports caching of words and it's stemmed equavilent.
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DEPENDENCIES
+
+None
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2001-2002 Ask Solem Hoel <ask@unixmonks.net>
+
