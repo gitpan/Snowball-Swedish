@@ -24,7 +24,7 @@ use bytes;
 
 
 use vars qw(%cache $VERSION);
-$Lingua::Stem::Snowball::Se::VERSION = 1.0;
+$Lingua::Stem::Snowball::Se::VERSION = 1.01;
 
 # special characters
 my $ae = chr(0xe4); # a"
@@ -56,7 +56,7 @@ my @endings = qw/
 # XXX: these must be sorted by length, like @endings in step 1.
 my @endings2 = ('fullt', "l${oe}st", 'els', 'lig', 'ig');
 
-%Lingua::Stem::Snowball::No::cache = ();
+%Lingua::Stem::Snowball::Se::cache = ();
 
 sub new {
 	my $pkg = shift;
