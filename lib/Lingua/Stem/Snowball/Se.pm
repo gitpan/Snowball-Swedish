@@ -5,7 +5,7 @@ use bytes;
 # Lingua::Stem::Snowball::Se - Swedish stemmer
 # :: based upon the swedish stemmer algorithm at snowball.tartarus.org.
 #	 by Martin Porter.
-# (c) 2001-2002 Ask Solem Hoel <ask@unixmonks.net>
+# (c) 2001-2007 Ask Solem Hoel <ask@0x61736b.net>
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License version 2,
@@ -23,8 +23,8 @@ use bytes;
 #####
 
 
-use vars qw(%cache $VERSION);
-$Lingua::Stem::Snowball::Se::VERSION = 1.01;
+use vars qw($VERSION);
+$VERSION = 1.1;
 
 # special characters
 my $ae = chr(0xe4); # a"
@@ -56,7 +56,7 @@ my @endings = qw/
 # XXX: these must be sorted by length, like @endings in step 1.
 my @endings2 = ('fullt', "l${oe}st", 'els', 'lig', 'ig');
 
-%Lingua::Stem::Snowball::Se::cache = ();
+my %cache = ( );
 
 sub new {
 	my $pkg = shift;
@@ -80,6 +80,7 @@ sub use_cache {
 
 sub stem {
 	my ($self, $word) = @_;
+    no warnings;
 	my $orig_word;
 
 	if($self->use_cache()) {
@@ -171,6 +172,7 @@ sub stem {
 
 sub getsides {
     my $word = shift;
+    no warnings;
     my $wlen = length $word;
 
     my($ls, $rs) = (undef, undef); # left side and right side.
@@ -213,9 +215,14 @@ sub getsides {
 1;
 
 __END__
+
 =head1 NAME
 
 Lingua::Stem::Snowball::Se - Porters stemming algorithm for Swedish
+
+=head1 VERSION
+
+This document describes version 1.1.
 
 =head1 SYNOPSIS
 
@@ -242,11 +249,44 @@ Lingua::Stem::Snowball::Se has nothing to export.
 
 =head1 AUTHOR
 
-Ask Solem Hoel, E<lt>ask@unixmonks.netE<gt>
+Ask Solem Hoel, E<lt>ask@0x61736b.netE<gt>
 
 =head1 SEE ALSO
 
 L<perl>. L<Lingua::Stem::Snowball>. L<Lingua::Stem>. L<http://snowball.tartarus.org>.
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright (c), 2007 Ask Solem C<< ask@0x61736b.net >>.
+
+All rights reserved.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.8.6 or,
+at your option, any later version of Perl 5 you may have available.
+
+=head1 DISCLAIMER OF WARRANTY
+
+BECAUSE THIS SOFTWARE IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY FOR THE
+SOFTWARE, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE
+STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE
+SOFTWARE "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND
+PERFORMANCE OF THE SOFTWARE IS WITH YOU. SHOULD THE SOFTWARE PROVE DEFECTIVE,
+YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR, OR CORRECTION.
+
+IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY
+COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE THE
+SOFTWARE AS PERMITTED BY THE ABOVE LICENCE, BE LIABLE TO YOU FOR DAMAGES,
+INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING
+OUT OF THE USE OR INABILITY TO USE THE SOFTWARE (INCLUDING BUT NOT LIMITED TO
+LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR
+THIRD PARTIES OR A FAILURE OF THE SOFTWARE TO OPERATE WITH ANY OTHER
+SOFTWARE), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.
+
+=cut
 
 =cut
 ~

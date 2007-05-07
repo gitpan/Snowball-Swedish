@@ -3,10 +3,10 @@ use ExtUtils::MakeMaker;
 # the contents of the Makefile that is written.
 WriteMakefile(
 	'NAME'      => 'Lingua::Stem::Snowball::Se',
-	'VERSION_FROM'  => 'Se.pm', # finds $VERSION
+	'VERSION_FROM'  => 'lib/Lingua/Stem/Snowball/Se.pm', # finds $VERSION
 	'PREREQ_PM'     => {}, # e.g., Module::Name => 1.1
 	($] >= 5.005 ?    ## Add these new keywords supported since 5.005
-		(ABSTRACT_FROM => 'Se.pm', # retrieve abstract from module
-		AUTHOR     => 'Ask Solem Hoel <ask@unixmonks.net>') : ()),
+		(ABSTRACT_FROM => 'lib/Lingua/Stem/Snowball/Se.pm', # retrieve abstract from module
+		AUTHOR     => 'Ask Solem Hoel <ASKSH@cpan.net>') : ()),
 );
 
