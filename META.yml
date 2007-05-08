@@ -1,6 +1,6 @@
 ---
-name: Lingua-Stem-Snowball-Se
-version: 1.1
+name: Snowball-Swedish
+version: 1.2
 author:
   - 'Ask Solem <ASKSH@cpan.org>'
 abstract: Porters stemming algorithm for swedish.
@@ -13,7 +13,7 @@ dynamic_config: 0
 provides:
   Lingua::Stem::Snowball::Se:
     file: lib/Lingua/Stem/Snowball/Se.pm
-    version: 1.1
+    version: 1.2
 generated_by: Module::Build version 0.2807
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

@@ -24,7 +24,7 @@ use bytes;
 
 
 use vars qw($VERSION);
-$VERSION = 1.1;
+$VERSION = 1.2;
 
 # special characters
 my $ae = chr(0xe4); # a"
@@ -287,7 +287,3 @@ SOFTWARE), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGES.
 
 =cut
-
-=cut
-~
-

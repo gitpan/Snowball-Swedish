@@ -1,6 +1,7 @@
+bin/stemmer-se.pl
 Build.PL
 Changes
-examples/stemmer.pl
+examples/stemmer-se.pl
 lib/Lingua/Stem/Snowball/Se.pm
 LICENSE
 Makefile.PL

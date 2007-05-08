@@ -5,6 +5,8 @@ WriteMakefile(
 	'NAME'      => 'Lingua::Stem::Snowball::Se',
 	'VERSION_FROM'  => 'lib/Lingua/Stem/Snowball/Se.pm', # finds $VERSION
 	'PREREQ_PM'     => {}, # e.g., Module::Name => 1.1
+    'PL_FILES'      => {},
+    'INST_BIN'      => 'bin/',
 	($] >= 5.005 ?    ## Add these new keywords supported since 5.005
 		(ABSTRACT_FROM => 'lib/Lingua/Stem/Snowball/Se.pm', # retrieve abstract from module
 		AUTHOR     => 'Ask Solem Hoel <ASKSH@cpan.net>') : ()),
